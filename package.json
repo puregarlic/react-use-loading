@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.2",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -32,10 +32,17 @@
   "name": "react-use-loading",
   "author": "Graham Barber",
   "module": "dist/react-use-loading.esm.js",
+  "sideEffects": false,
   "repository": {
     "url": "https://github.com/puregarlic/react-use-loading",
     "type": "git"
   },
+  "keywords": [
+    "react",
+    "hook",
+    "loading",
+    "tsdx"
+  ],
   "devDependencies": {
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",
