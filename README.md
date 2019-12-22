@@ -1,5 +1,9 @@
 [![Actions Status](https://github.com/puregarlic/react-use-loading/workflows/default/badge.svg)](https://github.com/puregarlic/react-use-loading/actions)
 
+<p align="center">
+  <img src="img/banner.png" height="300px" />
+</p>
+
 # react-use-loading
 
 Manage your component's loading state with one simple hook. Very useful if
