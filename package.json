@@ -1,5 +1,5 @@
 {
-  "version": "0.1.2",
+  "version": "0.1.3",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -31,6 +31,7 @@
   },
   "name": "react-use-loading",
   "author": "Graham Barber",
+  "description": "React Hook for managing loading indicator state",
   "module": "dist/react-use-loading.esm.js",
   "sideEffects": false,
   "repository": {
