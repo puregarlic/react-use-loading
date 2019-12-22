@@ -2,11 +2,14 @@
 
 # react-use-loading
 
-Manage your component's loading state with one simple hook. Very useful if you're making AJAX requests, for example, and you want to display a spinner and a loading message to clue your users into what's going on.
+Manage your component's loading state with one simple hook. Very useful if
+you're making AJAX requests, for example, and you want to display a spinner and
+a loading message to clue your users into what's going on.
 
 ## Getting Started
 
-`react-use-loading` is just a normal NPM library. You can install it with the following command:
+`react-use-loading` is just a normal NPM library. You can install it with the
+following command:
 
 ```sh
 npm install react-use-loading
@@ -35,17 +38,17 @@ const [{ isLoading, message }, { start, stop }] = useLoading(
 
 ### Params
 
-| Value         | Type                  | Description                    |
-| ------------- | --------------------- | ------------------------------ |
-| `initState`   | `boolean | undefined` | Used to initialize `isLoading` |
-| `initMessage` | `string | undefined`  | Used to initialize `message`   |
+| Value         | Type                     | Description                    |
+| ------------- | ------------------------ | ------------------------------ |
+| `initState`   | `boolean` or `undefined` | Used to initialize `isLoading` |
+| `initMessage` | `string` or `undefined`  | Used to initialize `message`   |
 
 ### Return Values
 
 | Value       | Type                            | Default     | Description                                                                                                                                                                                                                     |
 | ----------- | ------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `isLoading` | `boolean`                       | `false`     | Represents whether the component is engaged in loading or not                                                                                                                                                                   |
-| `message`   | `string | undefined`            | `undefined` | Used to communicate to the user what loading the component is engaged in                                                                                                                                                        |
+| `message`   | `string` or `undefined`         | `undefined` | Used to communicate to the user what loading the component is engaged in                                                                                                                                                        |
 | `start`     | `(newMessage?: string) => void` | N/A         | Used to toggle the hook _into_ loading state. Results in a rerender whereafter `isLoading` is true and `message` is either a newly-specified message, or `undefined` if no message was specified. Memoized using `useCallback`. |
 | `stop`      | `() => void`                    | N/A         | Used the toggle the hook _out of_ loading state. Results in a rerender whereafter `isLoading` is false and `message` is undefined. Memoized using `useCallback`.                                                                |
 
@@ -53,7 +56,8 @@ const [{ isLoading, message }, { start, stop }] = useLoading(
 
 ### Using `isLoading`
 
-This is the core reason that `react-use-loading` exists. Use this value to communicate whether the component is loading or not.
+This is the core reason that `react-use-loading` exists. Use this value to
+communicate whether the component is loading or not.
 
 ```jsx
 import React from 'react';
@@ -73,7 +77,10 @@ const MyComponent = () => {
 
 ### Using `message`
 
-The `message` variable is useful for communicating information to the user _besides_ just the fact that your app is fetching information. For example, you could tell the user that you're fetching their profile information, or that you're saving their updated settings.
+The `message` variable is useful for communicating information to the user
+_besides_ just the fact that your app is fetching information. For example, you
+could tell the user that you're fetching their profile information, or that
+you're saving their updated settings.
 
 ```jsx
 import React from 'react';
@@ -93,7 +100,9 @@ const MyComponent = () => {
 
 ### Using `start` and `stop`
 
-These methods are used for toggling loading state. They are useful for when you're making AJAX requests within the component, or when you start/stop any long-running task.
+These methods are used for toggling loading state. They are useful for when
+you're making AJAX requests within the component, or when you start/stop any
+long-running task.
 
 #### Calling `start` once
 
@@ -132,7 +141,8 @@ const MyComponent = () => {
 
 #### Calling `start` multiple times
 
-You can safely call `start` multiple times before you call `stop` if you would like to tell the user that you're interacting with multiple data soruces.
+You can safely call `start` multiple times before you call `stop` if you would
+like to tell the user that you're interacting with multiple data soruces.
 
 ```jsx
 import React, { useState, useEffect } from 'react';
@@ -179,7 +189,10 @@ const MyComponent = () => {
 
 #### Handling Aborts
 
-One thing to keep in mind when you're handling asynchronous requests in your component is that your component might be unmounted in the middle of a request. `stop` will attempt to update state behind the scenes, so when you abort your request make sure to prevent calling `stop` in the event of an `AbortError`.
+One thing to keep in mind when you're handling asynchronous requests in your
+component is that your component might be unmounted in the middle of a request.
+`stop` will attempt to update state behind the scenes, so when you abort your
+request make sure to prevent calling `stop` in the event of an `AbortError`.
 
 ```jsx
 import React, { useState, useEffect, useRef } from 'react'
@@ -223,10 +236,17 @@ const MyComponent = () => {
 }
 ```
 
+> In the future, I would like to prevent `stop` from making a state update once
+> the component has been unmounted, but I haven't figured out how to do that
+> yet.
+
 ## Contributing
 
-Contributions are welcome. Please fork the repository and then make a pull request once you've completed your changes. Make sure to write new tests or alter existing ones to validate your changes as well.
+Contributions are welcome. Please fork the repository and then make a pull
+request once you've completed your changes. Make sure to write new tests or
+alter existing ones to validate your changes as well.
 
 ## Thanks
 
-This project was bootstrapped with Jared Palmer's wonderful TSDX utility. The code itself is inspired by work I've completed for the Linux Foundation.
+This project was bootstrapped with Jared Palmer's wonderful TSDX utility. The
+code itself is inspired by work I've completed for the Linux Foundation.
