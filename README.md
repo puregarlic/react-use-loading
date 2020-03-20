@@ -137,7 +137,7 @@ const MyComponent = () => {
       }
     })();
   }, [start, stop]); // You can include these methods in the dependency
-  //                    array and be confident that they will not change.
+                     // array and be confident that they will not change.
 
   return isLoading ? <Spinner message={message} /> : <SomeComponent />;
 };
@@ -146,7 +146,7 @@ const MyComponent = () => {
 #### Calling `start` multiple times
 
 You can safely call `start` multiple times before you call `stop` if you would
-like to tell the user that you're interacting with multiple data soruces.
+like to tell the user that you're interacting with multiple data sources.
 
 ```jsx
 import React, { useState, useEffect } from 'react';
@@ -185,7 +185,7 @@ const MyComponent = () => {
       }
     })();
   }, [start, stop]); // You can include these methods in the dependency
-  //                    array and be confident that they will not change.
+                     // array and be confident that they will not change.
 
   return isLoading ? <Spinner message={message} /> : <SomeComponent />;
 };
